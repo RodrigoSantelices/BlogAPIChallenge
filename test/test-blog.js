@@ -17,35 +17,64 @@ describe('Blog Posts', function(){
     return closeServer();
   });
 
-  it('should retrieve single post on GET', function(){
+  it('should list items on GET', function(){
     return chai.request(app)
-    .get('/')
+    .get('/blog-posts')
     .then(function(res){
-      expect(res.body.length).to.be.at.least(1);
-    })
+      expect(res).to.have.status(200);
+      expect(res).to.be.json;
+    });
   });
 
+
   it('should create single post on POST', function(){
+    const newPost = {
+      title :'this here',
+      content: 'morehere',
+      author: 'last here'
+    };
+    const expectedKeys = ['id', 'publishDate'].concat(Object.keys(newPost));
+
     return chai.request(app)
-    .get('/')
+    .post('/blog-posts')
+    .send(newPost)
     .then(function(res){
-      expect(res).to.have.status(201)
+      expect(res).to.have.status(201);
+      expect(res).to.be.json;
+        expect(res.body).to.be.a('object');
+        expect(res.body).to.have.all.keys(expectedKeys);
+        expect(res.body.title).to.equal(newPost.title);
+        expect(res.body.content).to.equal(newPost.content);
+        expect(res.body.author).to.equal(newPost.author)
     })
   });
 
   it('should delete single post on DELETE', function(){
     return chai.request(app)
-    .get('/:id')
+    .get('/blog-posts')
     .then(function(res){
-      expect(res).to.have.status(204)
+      return chai.request(app)
+        .delete(`/blog-posts/${res.body[0].id}`)
+        .then(function(res){
+          expect(res).to.have.status(204);
+        })
     })
   });
 
   it('should update single post on PUT', function(){
     return chai.request(app)
-    .get('/:id')
+    .get('/blog-posts')
     .then(function(res){
-      expect(res).to.have.status(204)
+      const updatedPost = Object.assign(res.body[0],{
+        title:'something here',
+        content: 'more here'
+      });
+      return chai.request(app)
+        .put(`/blog-posts/${res.body[0].id}`)
+        .send(updatedPost)
+        .then(function(res){
+          expect(res).to.have.status(204)
+        });
     })
   });
 
