@@ -4,7 +4,7 @@ deploy:
   provider: heroku
   api_key:
     secure: CTQ7vWu8W/SOx3eMKOEMzdymUHn8ioQFPbRIvR3G+8IFI9lUDC976OTP5R7obkLHvh8AUQVv5cuQf1MkDZYj87WGZ1iKmbjYgY6L2z2rRSlE27S/jRfM7m9h4cbvjtp7THiobxuWtZhDqWZYmBQGQIb0FsqwkFbkF+kre7/VkfzFkNXW6ZPCqylew8V2EgE+42h+1uFX8zX1rL2AhnhMD7A2XYn32m7fqkp1jJX9WT1PKc2oak1VuY6GN5e1tO1vYx2CBguvpUVsIpDjHHLkksvZEsuhKBb80QhCFvCtmMiBMRuBtMLZ2zun61GH+2LTwPfteqN98sHQkz9A6S/BoSNv7ZzWvFZ3Jr+8Od9xad6iQn5UMJxac4bt93L3wb17eAxmPn+ZrrY1OHwm0XJj1J7nrfuVCp6iXFmi3lyh7elQgI/JsZfnzTFo980hZgAlhR/0h4yZebVUJjucbICJ3KMVFXe9d+AbR5ixsS8wYfitUOMSU8qzEJbpZyNd1wtW6sx3NKTNpONJob5dx1Wjl/OdiKfmffvJJx7ARVNW3kDXilNMJTWicaj3AAnbXGZIbAJ/+Y4uxEQnA1xYeGBUM7LPbpHeB30pAk/irWmOtceO+Qzzcjy1HcmdTG8MlFt/M81Ek+Jz+q3CaZZ5p6ADuEjyzygPhgdnRFdQePZANPY=
-  app: https://nameless-cove-63122.herokuapp.com/ | https://git.heroku.com/nameless-cove-63122.git
+  app: https://blogtestforcourse.herokuapp.com/
 
   on:
     repo: RodrigoSantelices/BlogAPIChallenge
