@@ -7,5 +7,5 @@ deploy:
   app: https://nameless-cove-63122.herokuapp.com/ | https://git.heroku.com/nameless-cove-63122.git
 
   on:
-    repo: RodrigoSantelices/Shopping-List-v5
+    repo: RodrigoSantelices/BlogAPIChallenge
     branch: tests-for-recipes
