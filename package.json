@@ -2,7 +2,7 @@
   "name": "blogapichallenge",
   "version": "1.0.0",
   "description": "",
-  "main": "model.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha --exit"
   },
@@ -10,6 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/RodrigoSantelices/BlogAPIChallenge.git"
   },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
